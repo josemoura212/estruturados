@@ -16,6 +16,21 @@ struct Pessoa {
     altura: f32,
 }
 
+struct Retangulo {
+    altura: u32,
+    largura: u32,
+}
+
+impl Retangulo {
+    fn calcular_area(&self) -> u64 {
+        (self.altura * self.largura).into()
+    }
+
+    fn new(largura: u32, altura: u32) -> Self {
+        Self { altura, largura }
+    }
+}
+
 fn main() {
     enumeracao(Fruta::Morango);
     enumeracao(Fruta::Banana);
@@ -37,6 +52,20 @@ fn estrutura() {
     println!("\nNome: {}", glaucio.nome);
     println!("Idade: {}", glaucio.idade);
     println!("Altura: {}\n", glaucio.altura);
+
+    let retangulo1 = Retangulo::new(10, 20);
+
+    let retangulo2 = Retangulo {
+        altura: 33,
+        largura: 5,
+    };
+
+    let area1 = retangulo1.calcular_area();
+
+    let area2 = retangulo2.calcular_area();
+
+    println!("Área do retângulo 1: {}\n", area1);
+    println!("Área do retângulo 2: {}\n", area2);
 }
 
 fn enumeracao_com_dados() {
