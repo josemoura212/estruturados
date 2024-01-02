@@ -21,7 +21,13 @@ struct Retangulo {
     largura: u32,
 }
 
-impl Retangulo {
+trait FormaGeometrica {
+    fn calcular_area(&self) -> u64;
+
+    fn new(largura: u32, altura: u32) -> Self;
+}
+
+impl FormaGeometrica for Retangulo {
     fn calcular_area(&self) -> u64 {
         (self.altura * self.largura).into()
     }
