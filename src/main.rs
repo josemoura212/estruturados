@@ -37,6 +37,22 @@ impl FormaGeometrica for Retangulo {
     }
 }
 
+impl Pessoa {
+    fn new(nome: String, idade: u8, altura: f32) -> Self {
+        Self {
+            nome,
+            idade,
+            altura,
+        }
+    }
+
+    fn print(&self) {
+        println!("\nNome: {}", self.nome);
+        println!("Idade: {}", self.idade);
+        println!("Altura: {}\n", self.altura);
+    }
+}
+
 fn main() {
     enumeracao(Fruta::Morango);
     enumeracao(Fruta::Banana);
@@ -54,6 +70,10 @@ fn estrutura() {
         idade: 20,
         altura: 1.75,
     };
+
+    let jose = Pessoa::new(String::from("José"), 30, 1.80);
+
+    jose.print();
 
     println!("\nNome: {}", glaucio.nome);
     println!("Idade: {}", glaucio.idade);
